@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flaghunter"
+version = "0.1.0"
+description = "CTF crypto autosolver and pcap hunter. Point it at a challenge file or packet capture and it runs a full attack battery for you."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Jake Burre" }]
+keywords = ["ctf", "crypto", "pcap", "forensics", "security", "codebreakers"]
+dependencies = ["cryptsmith>=0.1.0"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Information Technology",
+    "Topic :: Security",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.scripts]
+flaghunter = "flaghunter.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/burrejak22/flaghunter"
+Repository = "https://github.com/burrejak22/flaghunter"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
